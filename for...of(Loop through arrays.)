@@ -1,0 +1,32 @@
+let words = ["hello", "javascript", "world", "python", "css"];
+let searchWords = ["javascript", "css", "ruby"]; // "ruby" is not in the list
+
+let foundWords = {}; // Store found words with positions
+let notFoundWords = []; // Store words that were not found
+
+// Loop through searchWords to check if they exist in words array
+for (const searchWord of searchWords) {
+    let found = false;
+
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].toLowerCase() === searchWord.toLowerCase()) {
+            foundWords[searchWord] = i; // Store word and its index
+            found = true;
+            break; // Stop searching after finding the word
+        }
+    }
+
+    if (!found) {
+        notFoundWords.push(searchWord); // Store words that were not found
+    }
+}
+
+// Print found words
+for (const [word, index] of Object.entries(foundWords)) {
+    console.log(`"${word}" is found at index ${index}`);
+}
+
+// Print words that were not found
+if (notFoundWords.length > 0) {
+    console.log(`Not found: ${notFoundWords.join(", ")}`);
+}
