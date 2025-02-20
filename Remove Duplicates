@@ -1,0 +1,14 @@
+function removeDuplicates(arr) {
+    let uniqueArray = []; // Step 1: Create an empty array to store unique values
+
+    for (let i = 0; i < arr.length; i++) {  // Step 2: Start looping through the array
+        if (!uniqueArray.includes(arr[i])) { // Step 3: Check if the value is already in uniqueArray
+            uniqueArray.push(arr[i]); // Step 4: If not, add it to uniqueArray
+        }
+    }
+
+    return uniqueArray; // Step 5: Return the array with unique values
+}
+
+console.log(removeDuplicates(["Apple", "Banana", "Apple", "Cherry"]));
+// Output: ["Apple", "Banana", "Cherry"]
